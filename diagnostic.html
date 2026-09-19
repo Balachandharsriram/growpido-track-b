@@ -1,204 +1,377 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>Reputation Diagnostic — Badr Jafar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reputation Diagnostic | Growpido Track B</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --ink:#1c1c1c; --sub:#5a5a5a; --line:#e7e4de; --paper:#fdfcfa; --accent:#8a3b2b;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --ink:#ece9e4; --sub:#b7b2a9; --line:#3a362f; --paper:#171512; }
-  }
-  :root[data-theme="dark"] { --ink:#ece9e4; --sub:#b7b2a9; --line:#3a362f; --paper:#171512; }
-  * { box-sizing:border-box; }
-  body {
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family: 'Iowan Old Style','Palatino Linotype',Georgia,serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .page { max-width:840px; margin:0 auto; padding:40px 28px 64px; }
-  .masthead { display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:6px; }
-  .masthead h1 { font-size:1.5rem; margin:0; letter-spacing:.02em; }
-  .masthead .tag { font-family:-apple-system,Helvetica,Arial,sans-serif; font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:var(--sub); }
-  .subline { font-family:-apple-system,Helvetica,Arial,sans-serif; font-size:.85rem; color:var(--sub); margin-bottom:28px; }
-  .scorebar { display:flex; gap:16px; font-family:-apple-system,Helvetica,Arial,sans-serif; font-size:.78rem; margin-bottom:30px; }
-  .scorebar span { padding:4px 10px; border-radius:20px; border:1px solid var(--line); }
-  h2 { font-size:1rem; text-transform:uppercase; letter-spacing:.08em; font-family:-apple-system,Helvetica,Arial,sans-serif; color:var(--sub); border-bottom:1px solid var(--line); padding-bottom:6px; margin:30px 0 14px; }
-  .claim-row { padding:12px 0; border-bottom:1px solid var(--line); }
-  .claim-text { font-size:1rem; line-height:1.45; margin-bottom:6px; }
-  .claim-meta { display:flex; flex-wrap:wrap; align-items:center; gap:10px; font-family:-apple-system,Helvetica,Arial,sans-serif; font-size:.75rem; margin-bottom:4px; }
-  .badge { padding:2px 9px; border-radius:20px; font-weight:600; white-space:nowrap; }
-  .sources { color:var(--sub); }
-  .sources a { color:var(--sub); }
-  .claim-reason { font-family:-apple-system,Helvetica,Arial,sans-serif; font-size:.8rem; color:var(--sub); line-height:1.4; }
-  ul.gaps { margin:0; padding-left:20px; }
-  ul.gaps li { margin-bottom:10px; line-height:1.5; }
-  .refused { background:var(--paper); border:1px solid #a3272e55; border-left:4px solid #a3272e; padding:14px 16px; border-radius:4px; margin-top:6px; }
-  .refused .claim-text { text-decoration: line-through; text-decoration-color:#a3272e88; }
-  footer { margin-top:40px; font-family:-apple-system,Helvetica,Arial,sans-serif; font-size:.72rem; color:var(--sub); border-top:1px solid var(--line); padding-top:14px; }
-  @media print { body { background:#fff; } }
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:#e5e7eb;
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 25px;
+}
+
+.hero{
+
+background:linear-gradient(135deg,#111827,#1e3a8a,#0f172a);
+padding:45px;
+border-radius:28px;
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+position:relative;
+overflow:hidden;
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:320px;
+height:320px;
+background:rgba(255,255,255,.05);
+border-radius:50%;
+top:-120px;
+right:-80px;
+}
+
+.tag{
+display:inline-block;
+background:#2563eb;
+padding:8px 16px;
+border-radius:999px;
+font-size:13px;
+font-weight:600;
+letter-spacing:.8px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:44px;
+font-weight:800;
+margin-bottom:12px;
+}
+
+.hero p{
+color:#cbd5e1;
+max-width:760px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin:35px 0;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 35px rgba(0,0,0,.35);
+}
+
+.metric{
+font-size:34px;
+font-weight:800;
+margin-bottom:8px;
+}
+
+.metric.green{color:#22c55e;}
+.metric.yellow{color:#f59e0b;}
+.metric.red{color:#ef4444;}
+
+.section-title{
+font-size:28px;
+font-weight:700;
+margin:50px 0 20px;
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.section-title:before{
+content:"";
+width:6px;
+height:28px;
+background:#3b82f6;
+border-radius:20px;
+}
+
+.claim{
+background:#111827;
+border:1px solid #1f2937;
+padding:24px;
+border-radius:20px;
+margin-bottom:18px;
+transition:.3s;
+}
+
+.claim:hover{
+border-color:#3b82f6;
+transform:translateY(-3px);
+}
+
+.claim h3{
+font-size:20px;
+margin-bottom:14px;
+}
+
+.meta{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:15px;
+}
+
+.badge{
+padding:7px 14px;
+border-radius:999px;
+font-size:13px;
+font-weight:600;
+}
+
+.verified{
+background:rgba(34,197,94,.15);
+color:#22c55e;
+}
+
+.partial{
+background:rgba(245,158,11,.15);
+color:#f59e0b;
+}
+
+.unverified{
+background:rgba(239,68,68,.15);
+color:#ef4444;
+}
+
+.sources{
+color:#60a5fa;
+font-size:14px;
+margin-top:10px;
+}
+
+.list-card{
+background:#111827;
+padding:30px;
+border-radius:22px;
+border:1px solid #1f2937;
+}
+
+.list-card ul{
+padding-left:20px;
+}
+
+.list-card li{
+margin:16px 0;
+}
+
+.refused{
+background:linear-gradient(135deg,#3f1d1d,#111827);
+border-left:5px solid #ef4444;
+padding:30px;
+border-radius:20px;
+margin-top:15px;
+}
+
+.footer{
+margin-top:60px;
+padding-top:25px;
+border-top:1px solid #1f2937;
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:30px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.section-title{
+font-size:24px;
+}
+
+}
+
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="masthead">
-    <h1>Reputation Diagnostic</h1>
-    <div class="tag">Growpido · Track B</div>
-  </div>
-  <div class="subline">
-    Subject: <strong>Badr Jafar</strong>, CEO, Crescent Enterprises · Source: public LinkedIn presence + open web ·
-    Prepared 2026-09-19
-  </div>
 
-  <div class="scorebar">
-    <span>6 verified</span>
-    <span>2 partially verified</span>
-    <span>6 unverified / held</span>
-  </div>
+<div class="container">
 
-  <h2>Claim-by-claim verification</h2>
-  
-        <div class="claim-row">
-          <div class="claim-text">CEO of Crescent Enterprises</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#1a7f4e;background:#e7f6ee;border:1px solid #1a7f4e33;">Verified</span>
-            <span class="sources"><a href="https://en.wikipedia.org/wiki/Crescent_Enterprises" target="_blank" rel="noopener">en.wikipedia.org</a>, <a href="https://jp.weforum.org/people/badr-jafar" target="_blank" rel="noopener">weforum.org</a>, <a href="https://mei.edu/profile/badr-jafar" target="_blank" rel="noopener">mei.edu</a>, <a href="https://www.entrepreneur.com/author/badr-jafar" target="_blank" rel="noopener">entrepreneur.com</a></span>
-          </div>
-          <div class="claim-reason">Corroborated independently across 4 unrelated domains.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">President of Crescent Petroleum</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#1a7f4e;background:#e7f6ee;border:1px solid #1a7f4e33;">Verified</span>
-            <span class="sources"><a href="https://en.wikipedia.org/wiki/Crescent_Enterprises" target="_blank" rel="noopener">en.wikipedia.org</a>, <a href="https://jp.weforum.org/people/badr-jafar" target="_blank" rel="noopener">weforum.org</a>, <a href="https://www.khaleejtimes.com/author/badr-jafar" target="_blank" rel="noopener">khaleejtimes.com</a></span>
-          </div>
-          <div class="claim-reason">Corroborated independently across 3 unrelated domains.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Crescent Petroleum is the first independent, privately-owned petroleum company in the Middle East</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#a3272e;background:#fbe8e9;border:1px solid #a3272e33;">Unverified — held</span>
-            <span class="sources"><a href="https://milkeninstitute.org/staff/badr-jafar" target="_blank" rel="noopener">milkeninstitute.org</a>, <a href="https://mei.edu/profile/badr-jafar" target="_blank" rel="noopener">mei.edu</a>, <a href="https://app.swapcard.com/c/avpn-2/person/..." target="_blank" rel="noopener">app.swapcard.com</a></span>
-          </div>
-          <div class="claim-reason">Superlative claim whose every source traces back to the same subject/company-supplied sentence. No independent ranking or third-party reporting corroborates it. Repetition is not corroboration.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Chairman of Gulftainer</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#1a7f4e;background:#e7f6ee;border:1px solid #1a7f4e33;">Verified</span>
-            <span class="sources"><a href="https://en.wikipedia.org/wiki/Crescent_Enterprises" target="_blank" rel="noopener">en.wikipedia.org</a>, <a href="https://jp.weforum.org/people/badr-jafar" target="_blank" rel="noopener">weforum.org</a>, <a href="https://milkeninstitute.org/staff/badr-jafar" target="_blank" rel="noopener">milkeninstitute.org</a></span>
-          </div>
-          <div class="claim-reason">Corroborated independently across 3 unrelated domains.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Gulftainer is the largest privately-owned container port operator in the world</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#a3272e;background:#fbe8e9;border:1px solid #a3272e33;">Unverified — held</span>
-            <span class="sources"><a href="https://milkeninstitute.org/staff/badr-jafar" target="_blank" rel="noopener">milkeninstitute.org</a>, <a href="https://mei.edu/profile/badr-jafar" target="_blank" rel="noopener">mei.edu</a>, <a href="https://app.swapcard.com/c/avpn-2/person/..." target="_blank" rel="noopener">app.swapcard.com</a>, <a href="https://mena.entrepreneur.com/author/badr-jafar" target="_blank" rel="noopener">mena.entrepreneur.com</a></span>
-          </div>
-          <div class="claim-reason">Superlative claim whose every source traces back to the same subject/company-supplied sentence. No independent ranking or third-party reporting corroborates it. Repetition is not corroboration.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Chairman of Pearl Petroleum, described in his bio as 'the largest natural gas producer in the Kurdistan Region of Iraq'</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#9a6a00;background:#fff4dc;border:1px solid #9a6a0033;">Partially verified</span>
-            <span class="sources"><a href="https://milkeninstitute.org/staff/badr-jafar" target="_blank" rel="noopener">milkeninstitute.org</a>, <a href="https://www.pearlpetroleum.com/" target="_blank" rel="noopener">pearlpetroleum.com</a>, <a href="https://www.agbi.com/oil-and-gas/2025/04/output-at-iraqs-largest-gas-field-up-75-since-2017/" target="_blank" rel="noopener">agbi.com</a>, <a href="https://bne.eu/uae-s-dana-gas-and-partners-announce-production-boost-at-khor-mor-in-krg-375387" target="_blank" rel="noopener">bne.eu</a></span>
-          </div>
-          <div class="claim-reason">Independent trade press (agbi, bne, peregraf) confirms Khor Mor is Iraq's largest non-associated gas field, and Pearl Petroleum's own site claims it is 'the largest private investor in Iraq's gas sector' -- a related but not identical claim to 'largest natural gas producer in the Kurdistan Region'. The bio's precise wording is directionally supported but not an exact independent match.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Founded the Pearl Initiative in 2010, in cooperation with the UN Office for Partnerships</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#1a7f4e;background:#e7f6ee;border:1px solid #1a7f4e33;">Verified</span>
-            <span class="sources"><a href="https://milkeninstitute.org/staff/badr-jafar" target="_blank" rel="noopener">milkeninstitute.org</a>, <a href="https://wise-qatar.org/?p=8109" target="_blank" rel="noopener">wise-qatar.org</a>, <a href="https://mei.edu/profile/badr-jafar" target="_blank" rel="noopener">mei.edu</a>, <a href="https://jp.weforum.org/people/badr-jafar" target="_blank" rel="noopener">weforum.org</a></span>
-          </div>
-          <div class="claim-reason">Corroborated independently across 4 unrelated domains.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Appointed COP28 Special Representative for Business and Philanthropy</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#1a7f4e;background:#e7f6ee;border:1px solid #1a7f4e33;">Verified</span>
-            <span class="sources"><a href="https://www.khaleejtimes.com/author/badr-jafar" target="_blank" rel="noopener">khaleejtimes.com</a>, <a href="https://jp.weforum.org/people/badr-jafar" target="_blank" rel="noopener">weforum.org</a></span>
-          </div>
-          <div class="claim-reason">Corroborated independently across 2 unrelated domains.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Recognised as a Young Global Leader by the World Economic Forum in 2011</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#1a7f4e;background:#e7f6ee;border:1px solid #1a7f4e33;">Verified</span>
-            <span class="sources"><a href="https://mena.entrepreneur.com/author/badr-jafar" target="_blank" rel="noopener">mena.entrepreneur.com</a>, <a href="https://www.entrepreneur.com/author/badr-jafar" target="_blank" rel="noopener">entrepreneur.com</a></span>
-          </div>
-          <div class="claim-reason">Corroborated independently across 2 unrelated domains.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Holds a Master's Degree in Engineering from the University of Cambridge and a Business Degree from Cambridge Judge Business School</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#9a6a00;background:#fff4dc;border:1px solid #9a6a0033;">Partially verified</span>
-            <span class="sources"><a href="https://app.swapcard.com/c/avpn-2/person/..." target="_blank" rel="noopener">app.swapcard.com</a></span>
-          </div>
-          <div class="claim-reason">Only one indexed source states the specific degrees; other bios say only 'alumnus of the University of Cambridge' without naming the degree. No university-side or primary confirmation (e.g. Cambridge Judge alumni page) was found in this pass.</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Crescent Enterprises operates across nine industry sectors in 15 countries</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#a3272e;background:#fbe8e9;border:1px solid #a3272e33;">Unverified — held</span>
-            <span class="sources"><a href="https://app.swapcard.com/c/avpn-2/person/..." target="_blank" rel="noopener">app.swapcard.com</a></span>
-          </div>
-          <div class="claim-reason">Contradicted by the subject's own other published bios: Crescent Enterprises operates across six industry sectors in 18 countries | Crescent Enterprises employs over 3,000 people in 15 countries | Crescent Enterprises employs over 4,500 people in 20 countries</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Crescent Enterprises operates across six industry sectors in 18 countries</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#a3272e;background:#fbe8e9;border:1px solid #a3272e33;">Unverified — held</span>
-            <span class="sources"><a href="https://mena.entrepreneur.com/author/badr-jafar" target="_blank" rel="noopener">mena.entrepreneur.com</a></span>
-          </div>
-          <div class="claim-reason">Contradicted by the subject's own other published bios: Crescent Enterprises operates across nine industry sectors in 15 countries | Crescent Enterprises employs over 3,000 people in 15 countries | Crescent Enterprises employs over 4,500 people in 20 countries</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Crescent Enterprises employs over 3,000 people in 15 countries</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#a3272e;background:#fbe8e9;border:1px solid #a3272e33;">Unverified — held</span>
-            <span class="sources"><a href="https://vc4a.com/crescent-enterprises/?cmt=9" target="_blank" rel="noopener">vc4a.com</a></span>
-          </div>
-          <div class="claim-reason">Contradicted by the subject's own other published bios: Crescent Enterprises operates across nine industry sectors in 15 countries | Crescent Enterprises operates across six industry sectors in 18 countries | Crescent Enterprises employs over 4,500 people in 20 countries</div>
-        </div>
-        <div class="claim-row">
-          <div class="claim-text">Crescent Enterprises employs over 4,500 people in 20 countries</div>
-          <div class="claim-meta">
-            <span class="badge" style="color:#a3272e;background:#fbe8e9;border:1px solid #a3272e33;">Unverified — held</span>
-            <span class="sources"><a href="https://jp.weforum.org/organizations/crescent-enterprises/" target="_blank" rel="noopener">weforum.org</a></span>
-          </div>
-          <div class="claim-reason">Contradicted by the subject's own other published bios: Crescent Enterprises operates across nine industry sectors in 15 countries | Crescent Enterprises operates across six industry sectors in 18 countries | Crescent Enterprises employs over 3,000 people in 15 countries</div>
-        </div>
+<div class="hero">
 
-  <h2>Three biggest gaps in current public presence</h2>
-  <ul class="gaps"><li>Self-reported operating footprint numbers (sector count, country count, headcount) conflict across the subject's own bio pages -- no single current figure can be published without picking one arbitrarily.</li><li>Several of the subject's most repeated claims to distinction ('first', 'largest') are unsourced beyond the subject's own bio text -- widely repeated, never independently ranked or confirmed.</li><li>Core biographical credentials appear in only one indexed source, with other bios describing the same fact more vaguely -- no primary-source (institutional) confirmation was found in a single research pass.</li></ul>
+<div class="tag">Growpido • Track B</div>
 
-  <h2>One claim the system refused to publish</h2>
-  <div class="refused">
-    <div class="claim-text">"Gulftainer — the largest privately-owned container port operator in the world"</div>
-    <div class="claim-reason">
-      Refused as a bare fact. This sentence appears on four+ third-party bio pages, but every
-      instance is a verbatim republish of the same company-supplied paragraph — not four
-      independent confirmations, one claim copied four times. No maritime-industry ranking or
-      third-party benchmark was located in this research pass to corroborate "largest in the
-      world" among privately-owned operators specifically. It may well be true — it is simply not
-      independently verified, and a fund manager's or founder's client-facing content should not
-      carry a superlative dressed as fact on the strength of repetition alone. Recommended
-      treatment: attribute it ("Gulftainer, which the company describes as...") or drop it,
-      pending a primary industry-ranking source.
-    </div>
-  </div>
+<h1>Reputation Diagnostic</h1>
 
-  <footer>
-    Generated by the Track B verification pipeline. Every line above traces to a source URL;
-    nothing here was written by summarizing what "sounds right." Items marked unverified are held
-    and require human sign-off before any client-facing use — see README §Human gate.
-  </footer>
+<p>
+Professional verification report for <strong>Badr Jafar</strong>. Public claims
+were reviewed against open-web sources and classified as verified,
+partially verified, or unverified.
+</p>
+
 </div>
+
+<div class="grid">
+
+<div class="card">
+<div class="metric green">6</div>
+<p>Verified Claims</p>
+</div>
+
+<div class="card">
+<div class="metric yellow">2</div>
+<p>Partially Verified</p>
+</div>
+
+<div class="card">
+<div class="metric red">6</div>
+<p>Unverified / Held</p>
+</div>
+
+<div class="card">
+<div class="metric">14</div>
+<p>Total Claims Reviewed</p>
+</div>
+
+</div>
+
+<h2 class="section-title">Claim Verification</h2>
+
+<div class="claim">
+
+<h3>CEO of Crescent Enterprises</h3>
+
+<div class="meta">
+<span class="badge verified">Verified</span>
+</div>
+
+<p>
+Confirmed across multiple independent public sources including
+the World Economic Forum and institutional biographies.
+</p>
+
+<div class="sources">
+Sources: Wikipedia • World Economic Forum • MEI
+</div>
+
+</div>
+
+<div class="claim">
+
+<h3>Chairman of Gulftainer</h3>
+
+<div class="meta">
+<span class="badge verified">Verified</span>
+</div>
+
+<p>
+Supported by multiple independent sources describing his leadership role.
+</p>
+
+<div class="sources">
+Sources: WEF • Milken Institute • Wikipedia
+</div>
+
+</div>
+
+<div class="claim">
+
+<h3>Largest privately-owned container port operator in the world</h3>
+
+<div class="meta">
+<span class="badge unverified">Unverified</span>
+</div>
+
+<p>
+Repeated across several biographies, but they trace back to the same
+company-supplied wording rather than independent industry rankings.
+</p>
+
+</div>
+
+<div class="claim">
+
+<h3>Founded the Pearl Initiative (2010)</h3>
+
+<div class="meta">
+<span class="badge verified">Verified</span>
+</div>
+
+<p>
+Independently confirmed by multiple organizations and institutional sources.
+</p>
+
+</div>
+
+<h2 class="section-title">Key Public Profile Gaps</h2>
+
+<div class="list-card">
+
+<ul>
+
+<li>Conflicting company footprint figures across public biographies.</li>
+
+<li>Several “largest” and “first” claims lack independent third-party validation.</li>
+
+<li>Some educational credentials appear only in limited public sources.</li>
+
+</ul>
+
+</div>
+
+<h2 class="section-title">Held Claim</h2>
+
+<div class="refused">
+
+<h3>“Gulftainer is the largest privately-owned container port operator in the world.”</h3>
+
+<p style="margin-top:15px;color:#d1d5db;">
+This claim was intentionally held because available evidence primarily
+repeats company-supplied language rather than independent industry
+benchmarking.
+</p>
+
+</div>
+
+<div class="footer">
+
+Generated using the Growpido Track B verification workflow. <br>
+Designed with a professional corporate dashboard aesthetic.
+
+</div>
+
+</div>
+
 </body>
 </html>
