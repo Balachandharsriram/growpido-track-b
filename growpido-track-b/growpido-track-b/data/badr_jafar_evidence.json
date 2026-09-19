@@ -1,0 +1,170 @@
+{
+  "subject": {
+    "name": "Badr Jafar",
+    "role": "CEO, Crescent Enterprises",
+    "linkedin": "Public LinkedIn profile under 'Badr Jafar, Crescent Enterprises' (UAE)",
+    "researched_on": "2026-09-19"
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "text": "CEO of Crescent Enterprises",
+      "sources": [
+        {"domain": "en.wikipedia.org", "url": "https://en.wikipedia.org/wiki/Crescent_Enterprises"},
+        {"domain": "weforum.org", "url": "https://jp.weforum.org/people/badr-jafar"},
+        {"domain": "mei.edu", "url": "https://mei.edu/profile/badr-jafar"},
+        {"domain": "entrepreneur.com", "url": "https://www.entrepreneur.com/author/badr-jafar"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": false,
+      "superlative": false
+    },
+    {
+      "id": "c2",
+      "text": "President of Crescent Petroleum",
+      "sources": [
+        {"domain": "en.wikipedia.org", "url": "https://en.wikipedia.org/wiki/Crescent_Enterprises"},
+        {"domain": "weforum.org", "url": "https://jp.weforum.org/people/badr-jafar"},
+        {"domain": "khaleejtimes.com", "url": "https://www.khaleejtimes.com/author/badr-jafar"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": false,
+      "superlative": false
+    },
+    {
+      "id": "c3",
+      "text": "Crescent Petroleum is the first independent, privately-owned petroleum company in the Middle East",
+      "sources": [
+        {"domain": "milkeninstitute.org", "url": "https://milkeninstitute.org/staff/badr-jafar"},
+        {"domain": "mei.edu", "url": "https://mei.edu/profile/badr-jafar"},
+        {"domain": "app.swapcard.com", "url": "https://app.swapcard.com/c/avpn-2/person/..."}
+      ],
+      "self_sourced_only": true,
+      "numeric_claim": false,
+      "superlative": true,
+      "note": "Every instance of this exact phrase traces back to the same company-supplied bio paragraph, republished verbatim by event and institute sites. No independent business-history source was found ranking Crescent Petroleum as literally 'first' against competing claimants (e.g. other pre-1971 regional independents)."
+    },
+    {
+      "id": "c4",
+      "text": "Chairman of Gulftainer",
+      "sources": [
+        {"domain": "en.wikipedia.org", "url": "https://en.wikipedia.org/wiki/Crescent_Enterprises"},
+        {"domain": "weforum.org", "url": "https://jp.weforum.org/people/badr-jafar"},
+        {"domain": "milkeninstitute.org", "url": "https://milkeninstitute.org/staff/badr-jafar"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": false,
+      "superlative": false
+    },
+    {
+      "id": "c5",
+      "text": "Gulftainer is the largest privately-owned container port operator in the world",
+      "sources": [
+        {"domain": "milkeninstitute.org", "url": "https://milkeninstitute.org/staff/badr-jafar"},
+        {"domain": "mei.edu", "url": "https://mei.edu/profile/badr-jafar"},
+        {"domain": "app.swapcard.com", "url": "https://app.swapcard.com/c/avpn-2/person/..."},
+        {"domain": "mena.entrepreneur.com", "url": "https://mena.entrepreneur.com/author/badr-jafar"}
+      ],
+      "self_sourced_only": true,
+      "numeric_claim": false,
+      "superlative": true,
+      "note": "Widely repeated, but every repetition is the same bio sentence redistributed across bio-aggregator and event sites. No independent port-industry ranking (e.g. a maritime trade publication's operator league table) was located in this pass to corroborate 'largest in the world' among privately-owned operators specifically."
+    },
+    {
+      "id": "c6",
+      "text": "Chairman of Pearl Petroleum, described in his bio as 'the largest natural gas producer in the Kurdistan Region of Iraq'",
+      "sources": [
+        {"domain": "milkeninstitute.org", "url": "https://milkeninstitute.org/staff/badr-jafar"},
+        {"domain": "pearlpetroleum.com", "url": "https://www.pearlpetroleum.com/"},
+        {"domain": "agbi.com", "url": "https://www.agbi.com/oil-and-gas/2025/04/output-at-iraqs-largest-gas-field-up-75-since-2017/"},
+        {"domain": "bne.eu", "url": "https://bne.eu/uae-s-dana-gas-and-partners-announce-production-boost-at-khor-mor-in-krg-375387"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": false,
+      "superlative": true,
+      "note": "Independent trade press (agbi, bne, peregraf) confirms Khor Mor is Iraq's largest non-associated gas field, and Pearl Petroleum's own site claims it is 'the largest private investor in Iraq's gas sector' -- a related but not identical claim to 'largest natural gas producer in the Kurdistan Region'. The bio's precise wording is directionally supported but not an exact independent match."
+    },
+    {
+      "id": "c7",
+      "text": "Founded the Pearl Initiative in 2010, in cooperation with the UN Office for Partnerships",
+      "sources": [
+        {"domain": "milkeninstitute.org", "url": "https://milkeninstitute.org/staff/badr-jafar"},
+        {"domain": "wise-qatar.org", "url": "https://wise-qatar.org/?p=8109"},
+        {"domain": "mei.edu", "url": "https://mei.edu/profile/badr-jafar"},
+        {"domain": "weforum.org", "url": "https://jp.weforum.org/people/badr-jafar"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": true,
+      "superlative": false
+    },
+    {
+      "id": "c8",
+      "text": "Appointed COP28 Special Representative for Business and Philanthropy",
+      "sources": [
+        {"domain": "khaleejtimes.com", "url": "https://www.khaleejtimes.com/author/badr-jafar"},
+        {"domain": "weforum.org", "url": "https://jp.weforum.org/people/badr-jafar"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": false,
+      "superlative": false
+    },
+    {
+      "id": "c9",
+      "text": "Recognised as a Young Global Leader by the World Economic Forum in 2011",
+      "sources": [
+        {"domain": "mena.entrepreneur.com", "url": "https://mena.entrepreneur.com/author/badr-jafar"},
+        {"domain": "entrepreneur.com", "url": "https://www.entrepreneur.com/author/badr-jafar"}
+      ],
+      "self_sourced_only": false,
+      "numeric_claim": true,
+      "superlative": false
+    },
+    {
+      "id": "c10",
+      "text": "Holds a Master's Degree in Engineering from the University of Cambridge and a Business Degree from Cambridge Judge Business School",
+      "sources": [
+        {"domain": "app.swapcard.com", "url": "https://app.swapcard.com/c/avpn-2/person/..."}
+      ],
+      "self_sourced_only": true,
+      "numeric_claim": false,
+      "superlative": false,
+      "note": "Only one indexed source states the specific degrees; other bios say only 'alumnus of the University of Cambridge' without naming the degree. No university-side or primary confirmation (e.g. Cambridge Judge alumni page) was found in this pass."
+    },
+    {
+      "id": "c11a",
+      "text": "Crescent Enterprises operates across nine industry sectors in 15 countries",
+      "sources": [{"domain": "app.swapcard.com", "url": "https://app.swapcard.com/c/avpn-2/person/..."}],
+      "self_sourced_only": true,
+      "numeric_claim": true,
+      "superlative": false,
+      "contradiction_group": "ce_footprint"
+    },
+    {
+      "id": "c11b",
+      "text": "Crescent Enterprises operates across six industry sectors in 18 countries",
+      "sources": [{"domain": "mena.entrepreneur.com", "url": "https://mena.entrepreneur.com/author/badr-jafar"}],
+      "self_sourced_only": true,
+      "numeric_claim": true,
+      "superlative": false,
+      "contradiction_group": "ce_footprint"
+    },
+    {
+      "id": "c11c",
+      "text": "Crescent Enterprises employs over 3,000 people in 15 countries",
+      "sources": [{"domain": "vc4a.com", "url": "https://vc4a.com/crescent-enterprises/?cmt=9"}],
+      "self_sourced_only": true,
+      "numeric_claim": true,
+      "superlative": false,
+      "contradiction_group": "ce_footprint"
+    },
+    {
+      "id": "c11d",
+      "text": "Crescent Enterprises employs over 4,500 people in 20 countries",
+      "sources": [{"domain": "weforum.org", "url": "https://jp.weforum.org/organizations/crescent-enterprises/"}],
+      "self_sourced_only": true,
+      "numeric_claim": true,
+      "superlative": false,
+      "contradiction_group": "ce_footprint"
+    }
+  ]
+}
